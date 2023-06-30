@@ -1,0 +1,24 @@
+h1 {
+  color: blue;
+  font-size: large;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: red;
+  font-weight: 400;
+}
+
+p {
+    color:brown;
+    font-size:large;
+}
+/* comments can be written here */
+/* what are the components of a css */
+
+/* css rule -> theWholeThing */
+/* selector -> h1 */
+/* declaration(block) -> the curly brace */
+/* property - like color
+   value - green for color
+    */
