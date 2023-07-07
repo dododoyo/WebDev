@@ -1,0 +1,48 @@
+/* block element always starts on new line and spans full width 
+eg: headings, div, paragraph*/
+
+/* inline only spans it's content and doesn't start on a new line 
+eg: anchors, image, span */
+
+/* inline-block is in the middle of the two where element doesn't start on a new line and browser respects margin width, and height */
+
+/* this is determined by the display property and it can be customized */
+
+/* width, hieght, top ,and bottom margin are not respected for an inline element */
+
+/* display:none --> removed and not present */
+
+/* opacity:0 & visibility:hidden --> hides element and preserves space */
+
+/* The CSS box-sizing property allows us to include the padding and border in an element's total width and height. default value is content box*/
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #f1f5f9;
+  line-height: 1.5;
+}
+.section {
+  padding: 5rem 0;
+  background: #fff;
+}
+.section-title {
+  text-align: center;
+  text-transform: capitalize;
+}
+.title-underline {
+  height: 3px;
+  width: 90px;
+  background-color: blue;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.section-center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}

@@ -1,0 +1,66 @@
+/* CSS Box Model */
+/* Each element in css is represented as a box. */
+body{
+    /* addind system fonts to body */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* adding background to body */
+    background:#f1f5f9;
+}
+
+.card{
+    /* adding background to card */
+    background:#fff;
+    text-align:center;
+    padding:50px 50px;
+    max-width:300px;
+    margin:60px auto;
+    border: 2px solid;
+    border-radius:10px;
+}
+.card-1{
+    border-color: #ff69a6;
+}
+
+.icon{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    margin:0 auto;
+}
+
+.card-1 .icon {
+    background: #ff69a6;
+}
+.card-2 .icon{
+    background:#68a3ff;
+}
+
+.title{
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.text{
+    line-height: 25px;
+    color:#64748b;
+}
+
+.btn{
+    text-transform: capitalize;
+    border-style:hidden;
+    border-radius: 20%;
+    padding:10px;
+    letter-spacing: 2px;
+}
+
+.btn-pink{
+    background:#ffe8f1;
+}
+
+.btn-blue{
+    background:#ecf4ff ;
+}
+
+.card-2{
+    border-color: #68a3ff
+}
