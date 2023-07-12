@@ -1,0 +1,18 @@
+/* pseudo-class is used to define a special state of an element 
+selector:pseudo-class{property:value;}*/
+
+/*a:link{color:red;} */
+
+/* a:visited{apply these properties to visited links */
+
+/* a:hover{apply these properties when i hover over the elements */
+.first::first-line {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+.second:hover {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2rem;
+  background: red;
+}

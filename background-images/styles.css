@@ -1,0 +1,44 @@
+/* for a bigger div if the images is not enough it will be repeated*/
+/* for a  bigger image the div will take part of the image*/
+/* background-postion: clarifies the postion of the background (in axis, top,bottom . .  */
+
+/* background-attachment: */
+
+/* linear gradients: */
+
+/* background-size: */
+
+/* background-repeat: */
+
+/* shortcut to write them all together is 
+
+background: linear gardient, src/color  center/cover no-repeat fixed;*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  height: 500px;
+  color: white;
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.big-img {
+  background: url("./images/big.jpg") center/cover no-repeat fixed;
+}
+.small-img {
+  background: url("./images/small.jpg") center/cover no-repeat fixed;
+}
+.folder-img {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    url("./images/folder.jpg");
+
+  background-attachment: fixed;
+}

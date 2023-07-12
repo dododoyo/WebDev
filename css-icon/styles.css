@@ -1,0 +1,29 @@
+div{
+    width:200px;
+    height:200px;
+    background:green;
+    margin:2px;
+    font-size: 2.5rem;
+
+}
+:root{
+    --firstColor:magenta;
+    --secondColor:aqua;
+    --thirdColor:black;
+
+}
+:second{
+    --another:red;
+}
+
+.first{
+    color: var(--another)
+}
+
+.second{
+    color: var(--another)
+}
+ 
+.third{
+    color: var(--thirdColor)
+}
