@@ -1,0 +1,73 @@
+/* each time when we are working with flex-box we have
+to things to keep in mind a parent container and childrens. parent or children can be any html element. */
+
+/* in felx-box your content shapes your layout. */
+
+
+/* flex-properties
+
+1, flex-direction:row(default),row-reverse,column,... ;
+2, flex-wrap:nowrap(default),wrap,wrap-reverse. . . ;
+
+3, justify-content:flex-start(default),flex-end,space-between,center,space-around
+used to align and distribute flex items along the main axis
+
+4, align-items: stretch(default), baseline,
+used to align and distribute the flex items along the perpendicular axis of the flex container
+
+5,align-content` used when there are multiple lines of flex items. It only works when there is extra space on the cross axis. If there is only one line,
+`align-content` has no effect.
+
+6,align-items: used to align items along the cross axis. It applies to all the flex items in the container and overrides the `align-self` property of individual items. 
+
+7,`align-self` is a property used on individual flex items to align themselves along the cross axis. It overrides the `align-items` property set on the flex container. If `align-self` is not set it inherits `align-items`.
+
+8,order: 0(default),1,-1, . . 
+used to specify the order of items appearance in the flex container.
+
+9,flex-grow:0(default)
+used in flex-box to specify how much a flex item should grow relative to the other flex items in the container.
+
+10,flex-shrink:1(default)
+used to specify how much an item should shrink relative to others when there is not enough space on the main axis.
+
+11,flex-basis:used to set the initial size of the child
+
+12,gap:used to set the gap between elements(new-feature)
+
+*/
+
+.box {
+    padding: 25px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.box-1 {
+    background: rgba(1, 32, 53, 0.8);
+}
+
+.box-2 {
+    background: blue;
+}
+
+.box-3 {
+    background: green;
+}
+
+.box-4 {
+    background: yellow;
+}
+
+.box-5 {
+    background: orange;
+}
+
+.box-6 {
+    background: red;
+}
+
+.generic {
+    background: lime;
+    border: 1px solid blue;
+}
