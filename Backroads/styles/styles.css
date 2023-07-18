@@ -74,14 +74,14 @@ a {
   text-decoration: none;
 }
 
-/* img:not(.nav-logo) {
-  width: 100%;
-  display: block;
-} */
-img {
+img:not(.nav-logo) {
   width: 100%;
   display: block;
 }
+/* img {
+  width: 100%;
+  display: block;
+} */
 
 h1,
 h2,
@@ -308,6 +308,7 @@ Services
   background: var(--clr-primary-5);
   color:var(--clr-primary-1);
   border-radius: var(--radius);
+  margin-bottom:0.3rem;
 }
 
 .service-text{
@@ -342,6 +343,7 @@ Services
   .service {
     display:flex;
     text-align:left;
+    margin-bottom:0.5rem;
   }
   .service-icon{
     align-self: start;
@@ -451,18 +453,119 @@ Featured Tours
     flex-basis: calc(33.33% - 1rem);
   }
 }
+
+
 /*
 =============== 
 Contact
 ===============
 */
+.contact{
+  background:var(--clr-primary-5);
+}
+.contact-title{
+  color:white;
+}
+.contact-title p {
+  color: var(--clr-primary-8);
+}
+.contact-form{
+  display:flex;
+  max-width:28rem;
+}
+.form-control{
+  flex: 1 1 auto;
+  color:var(--clr-grey-5);
+}
+.form-control,.btn-submit{
+  padding: 0.375rem 0.75rem;
+  font-size:1rem;
+  line-height:1.5;
+  font-weight:300;
+  letter-spacing:var(--spacing);
+  background-color: white;
+  text-transform:capitalize;
+  border:transparent;
+}
+.form-control::placeholder{
+  color:inherit;
+}
+.btn-submit{
+  font-family: var(--ff-primary);
+  margin-left:0.5rem;
+  background:var(--clr-primary-8);
+  color:var(--clr-primary-1);
+  cursor:pointer;
+  transition:var(--transition);
+}
+.btn-submit:hover{
+  background:var(--clr-primary-1);
+  color: var(--clr-primary-5);
+}
 
-
+@media screen and (min-width:992px){
+  .contact-center{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+  }
+  .contact-form{
+    align-self:flex-start;
+    flex:1 1 auto; 
+  }
+}
 /*
 =============== 
 Gallery
 ===============
 */
+.img-container{
+  position:relative;
+  background: var(--clr-primary-5);
+}
+.gallery-icon{
+  position:absolute;
+  top:50%;
+  left:50%;
+  font-size:2rem;
+  transform:translate(-50%,-50%);
+  color:white;
+  opacity:0;
+  cursor:pointer;
+  transition:var(--transition);
+}
+.gallery-img{
+  height:17rem;
+  object-fit:cover;
+  transition:var(--transition);
+}
+
+/* when i hover over img-container do this to gallery-img */
+.img-container:hover .gallery-img{
+  opacity:0.7;
+}
+
+.img-container:hover .gallery-icon{
+  opacity:1;
+}
+
+@media screen and (min-width:768px){
+  .gallery-center{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .img-container{
+    flex-grow:0;
+    flex-shrink:0;
+    flex-basis:50%;
+  }
+}
+
+@media screen and (min-width:992px){
+  .img-container{ 
+    flex-basis:25%;
+  }
+}
 
 
 /*
@@ -470,3 +573,36 @@ Gallery
 Footer
 ===============
 */
+.footer{
+  background:var(--clr-grey-1);
+  text-align:center;
+  padding-right:2rem;
+  padding-left:2rem;
+}
+
+.footer-links,.footer-icons{
+  display:flex;
+  justify-content:center;
+  margin-bottom:1.5rem;
+  flex-wrap:wrap;
+}
+.footer-link{
+  color:white;
+  text-transform:capitalize;
+  font-size:1rem;
+  margin-right:1rem;
+  letter-spacing:var(--spacing);
+  transition:var(--transition); 
+}
+.footer-link:hover{
+  color:var(--clr-primary-5);
+}
+.footer-icon{
+  font-size:2rem;
+  margin-right:1rem;
+  color:var(--clr-primary-8);
+  transition: var(--transition);
+}
+.footer-icon:hover{
+  color:var(--clr-primary-5);
+}
