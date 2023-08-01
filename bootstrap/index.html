@@ -1,20 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap</title>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+  <!-- font awsome from web -->
+  <!-- <script src="https://kit.fontawesome.com/9d013d54b0.js" crossorigin="anonymous"></script> -->
 
+  <!-- font awsome from files -->
+  <link rel="stylesheet" href="./fontawesome/css/all.css">
+
+
+
+  <!-- Bootstrapfrom web -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
+
+  <!-- bootstrap from file -->
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+
+
+
+  <link rel="stylesheet" href="./styles.css">
+
+
+    <!-- Bootstrap JavaScript Libraries
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+      </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+      </script> -->
 
 </head>
 
 <body>
-  <h1 class=" custom-heading">Hello World</h1> 
-  <button class="btn btn-primary"> Facebook</button>
+  <header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">tindog</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Download</a>
+            </li>
+            
+      
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <main class="container-fluid">
+
+
+    <div class="row row-top">
+
+      <div class="down-col col-md-6">
+
+        <h1>Meet new and interesting dogs nearby.</h1>
+
+        <button class="btn btn-dark" type="button"><i class="fab fa-apple"></i> Download</button>
+
+        <button class="btn btn-outline-light" type="button"> <i class="fab fa-google-play"></i> Download</button>
+        
+      </div>
+
+      <div class="col-md-4 phone rotate-img">
+        <img style="max-width:30rem;max-height:20rem;" src="./dog.jpg" alt="iphone-img"/>
+      </div>
+
+    </div>
+
+    <div class="row row-two d-flex justify-content-center">
+
+      <div class="col-md-4 single-card">
+        <i class="fa-solid fa-circle-check"></i>
+        <h2>Easy to use</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, explicabo.</p>
+      </div>
+
+      <div class="col-md-4 single-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h2>Safe</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, explicabo.</p>
+      </div>
+
+      <div class="col-md-4  single-card">
+        <i class="fa-solid fa-heart"></i>
+        <h2>Loved by Most</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, explicabo.</p>
+      </div>
+
+    </div>
+
+  </main>
+  
+  <footer>
+    <!-- place footer here -->
+  </footer>
+
+
+
 </body>
 
 </html>

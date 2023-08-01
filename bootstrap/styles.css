@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Ubuntu:wght@300&display=swap');
+
+body {
+  box-sizing: border-box;
+  font-style: 'Montserrat', sans-serif;
+  width:100vw;
+}
+
+h1 {
+  font-family: 'Montserrat-Black', sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.row-top {
+  background:#3afdaf;
+  min-height:60vh;
+}
+.row>div{
+  padding:5rem 6rem;
+}
+
+.navbar-expand-lg {
+background:#3afdaf;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color:white;
+  margin:1rem;
+}
+
+.nav-link{
+  font-size:1.5rem;
+  color:white;
+}
+
+.btn{
+  margin-top:2rem;
+}
+
+/* .container-fluid{
+  /* place-items:center; */
+  /* margin:2rem;
+} */
+
+.rotate-img{
+  /* padding:6rem; */
+  transform:rotate(20deg) translate(5%,0%);
+}
+
+
+.phone img{
+  padding:0;
+  border-radius: 10%;
+  min-width:23rem;
+  min-height:28rem;
+  object-fit: cover;
+} 
+
+.single-card i{ 
+  color:#3afdaf;
+  font-size:5rem;
+  align-self:center;
+  padding-bottom:2rem;
+}
+.single-card p{ 
+  font-size:1.5rem;
+  padding:0 3.5rem;
+  /* max-width:20rem; */
+  /* text-align: center; */
+}
+
+.single-card {
+  /* border: solid 3px #3afdaf; */
+  /* margin:1rem; */
+  /* text-align:center; */
+  /* border-radius:10%; */
+
+}
+
+.row-two{
+  /* margin:1rem 0; */
+  text-align: center;
+}

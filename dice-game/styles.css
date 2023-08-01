@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Handjet:wght@300&display=swap');
+
+/* setup global variables */
+
+
+:root {
+  /* --clr-primary-1: #18122B; */
+  /* --clr-primary-2: #393053; */
+  --primary-color: #8a79bf;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+#title-text{
+  font-family: 'Handjet', cursive;
+  font-size: 7rem;
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+  transition:all 1s linear;
+}
+
+.title-center {
+  background: var(--primary-color);
+  height: 32vh;
+  width: 100vw;
+}
+
+section {
+  width: 100vw;
+  height: 60vh;
+  background: var(--primary-color);
+}
+
+.dice-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 2rem 2rem;
+}
+
+.dice-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 80%;
+}
+
+.dice-text {
+  text-align: center;
+  font-family: 'Borel', cursive;
+  font-size: 2rem;
+}
+
+.dice {
+  position: relative;
+  width: 250px;
+  font-size: 19rem;
+  height: 250px;
+  background: black;
+  color: red;
+  border-radius: 15%;
+  justify-self: center;
+  padding: 0 0;
+  display: grid;
+  place-items: center;
+
+  -webkit-box-shadow: 10px 10px 43px 2px rgba(34, 34, 34, 1);
+  -moz-box-shadow: 10px 10px 43px 2px rgba(34, 34, 34, 1);
+  box-shadow: 10px 10px 43px 2px rgba(34, 34, 34, 1);
+  transition: all 0.3s linear
+}
+
+.dice:hover{
+  font-size:19rem;
+  box-shadow: 12px 12px 55px 10px rgb(0, 0, 0);
+}
+
+.dice span {
+  position: absolute;  
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  background: var(--primary-color);
+  text-align: center;
+  height: 8vh;
+  font-size: 2rem;
+  width: 100vw;
+}
+
+a{
+  text-decoration: none;
+  color:black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media screen and (min-width:992px){
+  .dice-center {
+      margin:0 11rem;
+    }
+
+}
