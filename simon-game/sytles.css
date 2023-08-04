@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
+
+/* setup global variables */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0 0;
+}
+
+body {
+  background: #001C30;
+}
+
+h1 {
+  font-family: 'Handjet', cursive;
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+  letter-spacing: 8px;
+  word-spacing: 4px;
+  padding: 5rem 0;
+
+  transition: all 0.3s linear;
+  height: 25vh;
+}
+
+.gaming-area {
+  height: 75vh;
+  display: grid;
+}
+
+.squares-container {
+  display: grid;
+  place-self: center;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px 30px;
+  width: 390px;
+  transition: all 0.3s linear;
+  /* padding: 3rem 8rem; */
+
+}
+
+.square {
+  width: 180px;
+  height: 180px;
+  border: solid 8px black;
+  border-radius: 20%;
+  transition: all 0.1s linear;
+  /* padding: 3rem 8rem; */
+}
+
+
+.lightUp {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+.pressed{
+  opacity: 0.5;
+}
+
+.g{background: green;}
+
+.r{background: red;}
+
+.y{background: yellow;}
+
+.b{background: blue;}
+
+@media screen and (min-width:992px) {
+  .square {
+    width: 200px;
+    height: 200px;
+  }
+
+  .squares-container {
+    width: 430px;
+  }
+}
+
+@media screen and (min-width:1170px) {
+  .square {
+    width: 220px;
+    height: 220px;
+  }
+
+  .squares-container {
+    width: 470px;
+  }
+}

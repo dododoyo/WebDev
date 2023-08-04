@@ -1,0 +1,29 @@
+*{
+  margin:0;
+  box-sizing:border-box;
+}
+body{
+  background: #777777;
+  display:grid;
+}
+
+.big-title{
+  font-size: 4rem;
+  color:blue;
+}
+
+.margin-50{
+  margin:30px;
+  cursor:pointer;
+}
+
+img{
+  width:90vw;
+  place-self:center;
+  cursor:pointer;
+  object-fit: cover;
+}
+
+.green-color{
+  color:green
+}
