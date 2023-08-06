@@ -12,45 +12,57 @@ body {
   background: #001C30;
 }
 
-h1 {
-  font-family: 'Handjet', cursive;
-  font-size: 5rem;
-  color: white;
-  text-align: center;
-  letter-spacing: 8px;
-  word-spacing: 4px;
-  padding: 5rem 0;
-
-  transition: all 0.3s linear;
-  height: 25vh;
+header {
+  height:25vh;
+  display:grid;
+  place-items:center;
 }
 
-.gaming-area {
-  height: 75vh;
-  display: grid;
+h1 {
+  font-family: 'Handjet', cursive;
+  font-size: 3.5rem;
+  color: white;
+  text-align: center;
+  width:100vw;
+  letter-spacing: 8px;
+  /* word-spacing: 4px; */
+  /* padding: 5rem 0; */
+  transition: all 0.3s linear;
+  /* height: 25vh; */
+}
+.gaming-area{
+  display:grid;
+  place-items:center;
+  width: 100vw;
+  height: 60vh;
+
 }
 
 .squares-container {
   display: grid;
-  place-self: center;
+  /* place-self: center; */
   place-items: center;
+  grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 30px 30px;
-  width: 390px;
+  /* gap: 0 10px; */
+  height:100%;
+  width:70%;
   transition: all 0.3s linear;
   /* padding: 3rem 8rem; */
 
 }
 
 .square {
-  width: 180px;
-  height: 180px;
+  width: 90%;
+  height: 90%;
   border: solid 8px black;
   border-radius: 20%;
   transition: all 0.1s linear;
+  /* align-self:center; */
   /* padding: 3rem 8rem; */
 }
+
 
 
 .lightUp {
@@ -59,35 +71,81 @@ h1 {
 }
 
 .pressed{
-  opacity: 0.5;
+  opacity: 0;
 }
 
-.g{background: green;}
+#green {background: green;}
 
-.r{background: red;}
+#red {background: red;}
 
-.y{background: yellow;}
+#yellow {background: yellow;}
 
-.b{background: blue;}
+#blue {background: blue;}
 
-@media screen and (min-width:992px) {
+.btn-container{
+  display:grid;
+  height:10vh;
+}
+
+.restart-button {
+  background: #8ddd1e;
+  text-transform: uppercase;
+  color: white;
+  /* padding: 0.5rem 0.5rem; */
+  display: inline-block;
+  width:25%;
+  height:50%;
+  place-self:center;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.3s linear;
+  border: none;
+  cursor: pointer;
+  /* box-shadow: 0 1px 6px rgba(0, 0, 0, 0.8); */
+}
+
+/* setup what will happen as you hover over the button */
+.restart-button:hover {
+  color: black;
+  background: #b0efec;
+  
+}
+
+/* .restart-button{
+  padding: 1rem 0;
+  place-self:center;
+  width:5rem;
+  height:1rem;
+  text-align:center; 
+  font-size:2rem;
+  font-family: 'Handjet', cursive;
+  transform:translateY(-50%); 
+} 
+*/
+
+@media screen and (min-width:768px) {
   .square {
     width: 200px;
     height: 200px;
   }
 
   .squares-container {
-    width: 430px;
+    width:420px;
+    gap: 20px 20px;
+  }
+  .restart-button{
+    transform:translateY(80%);
   }
 }
-
+/* 
 @media screen and (min-width:1170px) {
   .square {
-    width: 220px;
-    height: 220px;
-  }
-
-  .squares-container {
-    width: 470px;
-  }
-}
+      width: 220px;
+      height: 220px;
+    }
+  
+    .squares-container {
+      width: 460px;
+    }
+} */

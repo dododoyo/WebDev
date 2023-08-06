@@ -41,7 +41,7 @@ function nextSequence() {
   flashColor(randomChosenColor);
 
   level++;
-  $('h1').text("Level - "+level.toString());
+  $('h1').text("Level - "+level);
   userChosenPattern = [];
   return randomNumber;
 }
@@ -53,18 +53,35 @@ function flashColor(color) {
 
 // function to handle button clicks
 function detectClicks(){
-  $(".btn").on("click", function (event) {
+  $(".square").on("click", function (event) {
     let userChosenColor = event.target.id;
     userChosenPattern.push(userChosenColor);
+
     playSound(userChosenColor);
     animatePress(userChosenColor);
 
-    checkAnswer(level);
+    checkAnswer(userChosenPattern.length -1);
+  })};
+
+  $(".restart-button").on("click",function(event){
+    gamePattern = [];
+
+  //   // let randomNumber = Math.floor(Math.random() * 4);
+  //   // let randomChosenColor = buttonColors[randomNumber];
+
+  //   // gamePattern.push(randomChosenColor);
+  //   // playSound(randomChosenColor);
+  //   // flashColor(randomChosenColor);
+  //   // $("h1").text("Level - " + level);  
+
+    gamePattern.push(buttonColors[nextSequence()])
+  //     gameStarted = true;
+    
   });
-}
+
+
 
 // function to check if the user's pattern matches the game pattern
-
 function checkAnswer(gameLevel){
   /**
    * This function checks if the user's chosen pattern matches the game pattern up to the current level.
@@ -74,6 +91,7 @@ function checkAnswer(gameLevel){
    *  gameLevel - The current level of the game.
    */
   // check if the user's chosen pattern matches the game pattern up to the current level
+
   if (userChosenPattern[gameLevel] === gamePattern[gameLevel]) {
     console.log("success");
     // check if the user has completed the current level
@@ -93,6 +111,9 @@ function checkAnswer(gameLevel){
     });
     // display a "Game Over" message
     $("h1").text("Game Over, Press any key to restart.");
+    level = 0;
+    gamePattern = [];
+    gameStarted = false;
   }
 }
 
@@ -111,15 +132,19 @@ function animatePress(pressedColor){
 function detectKeyPress(){
   $(document).on("keypress",function(){
     if (gameStarted == false){
-      userChosenPattern.push(buttonColors[nextSequence()])
-
+      gamePattern.push(buttonColors[nextSequence()])
       gameStarted = true;
-
-      console.log(gamePattern);
-      detectClicks();
+      // console.log(gamePattern);
     }
   })
 }
 
+function startOver(){
+  level = 0;
+  gamePattern = [];
+  started = false;
+}
+
 // start the game when a key is pressed
 detectKeyPress();
+detectClicks();

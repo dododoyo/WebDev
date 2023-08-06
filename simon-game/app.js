@@ -1,89 +1,80 @@
-// Create audio objects for each button sound
-let greenSound = new Audio("sounds/green.mp3");
-let redSound = new Audio("sounds/red.mp3");
-let yellowSound = new Audio("sounds/yellow.mp3");
-let wrongSound = new Audio("sounds/wrong.mp3");
-let blueSound = new Audio("sounds/blue.mp3");
-
-// Set initial game state
-let gameNotStarted = true;
-let keySequence =  [];
-
-// function to generate a random number between 0 and 3
-function randomNumber() {
-  return Math.floor(Math.random() * 4);
-}
-
-// function to map random number to a button letter
-function randomLetter(randNumber) {
-  if (randNumber == 0) {return "g";} 
-  else if (randNumber == 1) {return "r";} 
-  else if (randNumber == 2) {return "y";}
-  else {return "b";}
-}
-
-// function to light up a button for 400ms
-function lightButton(buttonName) {
-  $("." + buttonName).addClass("lightUp");
-
-  setTimeout(function () {
-    $("." + buttonName).removeClass("lightUp");
-  }, 400);
-}
 
 
-// function to show the next button
-function showButton(buttonName){
-  $("." + buttonName).animate({opacity:0}).animate({opacity:1})
-}
+var buttonColours = ["red", "blue", "green", "yellow"];
 
-// function to play  sound for a button
-function playSoundButton(buttonName) 
-{
-  if (buttonName == "r") {redSound.play();} 
-  else if (buttonName == "g") {greenSound.play();} 
-  else if (buttonName == "y") {yellowSound.play();} 
-  else if (buttonName == "b") {blueSound.play();} 
-  else {wrongSound.play();}
-}
+var gamePattern = [];
+var userClickedPattern = [];
 
-// function to select a random button and light it up and play its sound
-function selectRandom(){
-  let randomLeter = randomLetter(randomNumber());
+var started = false;
+var level = 0;
 
-  showButton(randomLeter);
-
-  playSoundButton(randomLeter);
-
-  return randomLeter;
-}
-
-function playGame(colorSequence){
-  
-}
-
-
-
-// Start the game when any key is pressed and name is not already running
-$(document).on('keypress', function(){
-  if (gameNotStarted){
-    gameNotStarted = false;
-    keySequence.push(selectRandom());
-    $('h1').text("Level - "+keySequence.length.toString());
+$(document).keypress(function () {
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
   }
 });
 
-while (gameNotStarted == false){
-  $(".square").on("click", function (event) {
-    let clickedClassList = event.target.classList;
-  });
+$(".btn").click(function () {
+  var userChosenColour = $(this).attr("id");
+  userClickedPattern.push(userChosenColour);
 
-  $()
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
 
+  checkAnswer(userClickedPattern.length - 1);
+});
+
+function checkAnswer(currentLevel) {
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function () {
+        nextSequence();
+      }, 1000);
+    }
+  } else {
+    playSound("wrong");
+    $("body").addClass("game-over");
+    $("#level-title").text("Game Over, Press Any Key to Restart");
+
+    setTimeout(function () {
+      $("body").removeClass("game-over");
+    }, 200);
+
+    startOver();
+  }
 }
 
+function nextSequence() {
+  userClickedPattern = [];
+  level++;
+  $("#level-title").text("Level " + level);
+  var randomNumber = Math.floor(Math.random() * 4);
+  var randomChosenColour = buttonColours[randomNumber];
+  gamePattern.push(randomChosenColour);
 
+  $("#" + randomChosenColour)
+    .fadeIn(100)
+    .fadeOut(100)
+    .fadeIn(100);
+  playSound(randomChosenColour);
+}
 
+function animatePress(currentColor) {
+  $("#" + currentColor).addClass("pressed");
+  setTimeout(function () {
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
+}
 
+function playSound(name) {
+  var audio = new Audio("sounds/" + name + ".mp3");
+  audio.play();
+}
 
-
+function startOver() {
+  level = 0;
+  gamePattern = [];
+  started = false;
+}

@@ -8,22 +8,31 @@
 </head>
 
 <body>
-
-  <h1>Press A Key to Start</h1>
-
+  <header>
+    <h1>Press Any Key to Start</h1>
+  </header>
+  
   <div class="gaming-area">
     <div class="squares-container">
-      <div class="square g"></div>
-      <div class="square r"></div>
-      <div class="square y"></div>
-      <div class="square b"></div>
+
+      <div id="green"class="square"></div>
+      <div id="red"class="square"></div>
+      <div id="yellow"class="square"></div>
+      <div id="blue"class="square"></div>
+
     </div>
+  </div>
+
+  <!-- -->
+  <div class="btn-container">
+  <button class = "restart-button">Restart</button>
   </div>
 
 
   <!-- ADD jquery from google  -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
