@@ -1,0 +1,19 @@
+<%- include('partials/header') -%>
+
+  
+
+  <form action="/" method="post" class="d-grid post-form mt-5 mb-5">
+
+    <h1>Compose</h1>
+
+    <label class="mt-2 mb-2" for="publishTitle">Title</label>
+    <input class="title " type="text" id="publishTitle" name="publishTitle">
+
+    <label class='mt-3 mb-2' for="publishContent">Post</label>
+    <textarea name="publishContent" id="publishContent" cols="24" rows="8"></textarea>
+
+
+    <button type="submit" name="nextPostButton" class='btn btn-primary publish'value="toBePublished"><strong>Publish</strong></button>
+  </form>
+
+<%- include('partials/footer') -%>
