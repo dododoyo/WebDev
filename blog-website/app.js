@@ -1,9 +1,9 @@
 const express = require('express');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
+const _ = require('lodash');
 
 let listOfPosts = [];
-
 const app = express();
 
 const homeStartingContent ="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure obcaecati voluptatem qui quia beatae deserunt quidem alias fugiat ipsum assumenda voluptate impedit animi ab quod veniam hic natus, id vitae sint officia magni dicta labore officiis. Fugit maiores nemo voluptatem natus ratione, laborum ullam quasi voluptas, cumque itaque aperiam at, eius tenetur sequi eveniet exercitationem et repudiandae. At natus, adipisci pariatur quisquam repellat eius eos quidem harum dolorum voluptatem labore. Omnis quod iure eos quaerat ipsum corrupti quae suscipit tempora.";
@@ -17,8 +17,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 
 app.get('/',function(req,res){
-  
-  res.render('home',{homeContent:homeStartingContent});
+  res.render('home',{homeContent:homeStartingContent,postList:listOfPosts});
   // res.render()
 });
 
@@ -39,6 +38,19 @@ app.get('/compose',function(req,res){
   res.render('compose');
   // res.render()
 });
+
+app.get('/listOfPosts/:postName', function(req,res){
+
+  const requestedTitle = _.lowerCase(req.params.postName);
+
+  listOfPosts.forEach(function(eachPost){
+    let insideTitle = _.lowerCase(eachPost.title);
+    if(requestedTitle === insideTitle){
+      // console.log('Match Found');
+      res.render('post',{eachPost:eachPost});
+    }
+  });
+})
 
 app.post('/',function(req,res){
   if (req.body.nextPostButton === 'toBePublished'){

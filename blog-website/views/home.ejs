@@ -4,4 +4,13 @@
 
 <p><%=homeContent%></p>
 
+<% postList.forEach(function(eachPost){ %>
+
+  <h1><%= eachPost.title %></h1>
+  <p><%= eachPost.content.split(" ").splice(0,10).join(" ") + "... " %> 
+    <a href="http://localhost:3000/listOfPosts/<%= eachPost.title %>">Read more </a>
+  </p>
+
+<% }); %>
+
 <%- include('partials/footer') %>
