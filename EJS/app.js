@@ -1,63 +1,48 @@
+//jshint esversion:6
+
 const express = require("express");
-const https = require("https");
-const ejs = require("ejs");
+const bodyParser = require("body-parser");
+const date = require(__dirname + "/date.js");
 
-const PORT_ = 3000;
 const app = express();
-let items = ["Buy Food", "Cook Food"];
 
-let workItems = [];
-let item = "";
-let taskType='';
-let color ="";
+app.set('view engine', 'ejs');
 
-// use integrated middlewares
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
-// Sets the view engine for the app to EJS
-app.set("view engine", "ejs");
+const items = ["Buy Food", "Cook Food", "Eat Food"];
+const workItems = [];
 
-app.post("/", function (req, res) {
-  taskType = req.body.taskType;
-  item = req.body.newTask;
+app.get("/", function(req, res) {
 
-  console.log(taskType);
-  console.log(item);
-  console.log();
+const day = date.getDate();
 
-  if (taskType === "Work") {
+  res.render("list", {listTitle: day, newListItems: items});
+
+});
+
+app.post("/", function(req, res){
+
+  const item = req.body.newItem;
+
+  if (req.body.list === "Work") {
     workItems.push(item);
     res.redirect("/work");
   } else {
     items.push(item);
-    // console.log(item);
     res.redirect("/");
   }
 });
 
-app.get("/work", function (req, res) {
-  res.render("index", {
-    typeOfTask: "Work Related",
-    kindOfDay: "Work",
-    toDoItems: workItems,
-  });
+app.get("/work", function(req,res){
+  res.render("list", {listTitle: "Work List", newListItems: workItems});
 });
 
-app.get("/", function (req, res){
-  let today = new Date();
-  let year = today.getFullYear();
-  let options = { weekday: "long", day: "numeric", month: "long"};
-  let message = today.toLocaleDateString("en-US", options);
-  res.render("index", { 
-    typeOfTask:'Tasks To Do',
-    kindOfDay: message,  
-    toDoItems: items });
-  // res.render('list',{});
-  // res.send();
+app.get("/about", function(req, res){
+  res.render("about");
 });
 
-app.listen(PORT_, function () {
-  console.log(`App listening on port ${PORT_}`);
+app.listen(3000, function() {
+  console.log("Server started on port 3000");
 });
