@@ -21,7 +21,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // Connect to the local MongoDB database
-mongoose.connect('mongodb://localhost:27017/ToDoDB',{useNewUrlParser:true});
+// mongoose.connect('mongodb://localhost:27017/ToDoDB',
+
+// Connect mongodb from atlas
+mongoose.connect(
+  "mongodb+srv://markxuch:DQpjRPEhj9d189Yp@cluster0.qpub9vx.mongodb.net/todoListDB",
+  { useNewUrlParser: true }
+);
+
+// mongoose.connect('mongodb://localhost:27017/ToDoDB',
 
 // Define the schema for the 'items' collection
 const itemsSchema = {
@@ -99,24 +107,33 @@ app.get("/", function (req, res) {
 app.get('/:customTaskList',function(req,res){
     const customTaskList = _.capitalize(req.params.customTaskList); 
 
-    // console.log(customTaskList);
     // search if the list already exists
 
-    List.findOne({task:customTaskList}).exec().then(function(itemFound){
-      // console.log(itemFound);
-      if (itemFound === null){
-        const list = new List({
-          task: customTaskList,
-          items: defaultItems,
+    if (customTaskList == 'Favicon.ico'){
+      //do nothing just a browser asking for favicon.ico
+    }
+    else{
+      console.log(customTaskList);
+
+      List.findOne({ task: customTaskList })
+        .exec()
+        .then(function (itemFound) {
+          console.log(itemFound);
+          if (itemFound === null) {
+            const list = new List({
+              task: customTaskList,
+              items: defaultItems,
+            });
+            list.save();
+            res.redirect("/" + customTaskList);
+          } else {
+            res.render("list", {
+              listTitle: itemFound.task,
+              newListItems: itemFound.items,
+            });
+          }
         });
-        list.save();
-        res.redirect("/" + customTaskList);
-      }
-      
-      else{
-        res.render("list", { listTitle: itemFound.task, newListItems: itemFound.items});
-      }
-    })
+    }
 });
 
 
@@ -137,6 +154,7 @@ app.post("/", function(req, res){
 
   if (listType == 'Today'){
     item.save()
+
     res.redirect('/');
   }
   else{
@@ -204,7 +222,7 @@ app.post("/delete", function (req, res) {
     Item.findByIdAndRemove(checkedItemId)
       .exec()
       .then(function (foundItem) {
-        console.log("Task `" + foundItem.task + "` was successfully removed.");
+        console.log("Task `" + foundItem.task + "` was successfully removed from Today's list");
         res.redirect("/");
       });
   } else {
