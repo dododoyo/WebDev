@@ -1,6 +1,6 @@
 # Web Development Learning Progress
 ---
-This repository tracks my progress in learning web development. I started learning web development three months ago and have covered a lot of ground since then. Here's a list of the topics I've learned so far:
+This repository tracks my progress in learning web development. Here's a list of the topics I've learned so far:
 
 - HTML
 - CSS (Flexbox and Grid)
