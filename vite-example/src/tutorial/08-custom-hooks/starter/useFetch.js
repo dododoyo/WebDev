@@ -1,0 +1,41 @@
+import {useEffect,useState} from 'react';
+
+/**
+ * A custom hook that fetches data from a given URL and returns the loading status, error status, and fetched data.
+ * @param {string} url - The URL to fetch data from.
+ * @returns {{isLoading: boolean, isError: boolean, data: object}} - An object containing the loading status, error status, and fetched data.
+ */
+const useFetch = (url) => {
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const resp = await fetch(url);
+        // console.log(resp);
+        if (!resp.ok) {
+          setIsError(true);
+          setIsLoading(false);
+          return;
+        }
+
+        const data = await resp.json();
+        setData(data);
+      } catch (error) {
+        setIsError(true);
+        // console.log(error);
+      }
+      // hide loading
+      setIsLoading(false);
+    };
+    
+    fetchData();
+  }, []);
+
+  return {isLoading,isError,data};
+}
+export default useFetch;
