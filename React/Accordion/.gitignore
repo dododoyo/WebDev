@@ -1,0 +1,5 @@
+.vscode/
+final/
+final-alternative/
+node_modules/
+.env
