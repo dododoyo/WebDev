@@ -21,15 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // Connect to the local MongoDB database
-// mongoose.connect('mongodb://localhost:27017/ToDoDB',
-
-// Connect mongodb from atlas
-mongoose.connect(
-  "mongodb+srv://markxuch:DQpjRPEhj9d189Yp@cluster0.qpub9vx.mongodb.net/todoListDB",
-  { useNewUrlParser: true }
-);
-
-// mongoose.connect('mongodb://localhost:27017/ToDoDB',
+mongoose.connect('mongodb://localhost:27017/ToDoDB',{ useNewUrlParser: true });
 
 // Define the schema for the 'items' collection
 const itemsSchema = {

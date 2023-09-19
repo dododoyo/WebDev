@@ -42,8 +42,6 @@ app.listen(3000,function(){
 
 /*1. Stop the currently running Node.js process that is using port 3000. You can do this by finding the process ID (PID) of the process using the following command: `sudo lsof -i :3000`. Then, use the PID to kill the process using the following command: `kill -9 <PID>`.
 
-
-
 or use this 
 sudo killall -9 node
 */

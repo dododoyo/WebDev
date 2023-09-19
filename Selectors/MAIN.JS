@@ -1,1 +1,0 @@
-function test(name,birth,curr)

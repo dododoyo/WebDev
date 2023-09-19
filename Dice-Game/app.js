@@ -1,5 +1,7 @@
 function throwDice(){
+
   let randomFirst = Math.floor(Math.random() * 6) + 1;
+  
   if (randomFirst == 1) {
     document.getElementById("dice-1").classList.add("fa-dice-one");
   } else if (randomFirst == 2) {
