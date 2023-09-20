@@ -13,7 +13,8 @@ const App = () => {
     if (amount < 1){amount=1;}
 
     setParagraphs(text.slice(0,amount));
-    return ;}
+    return ;
+  }
 
   return (
     <main>
