@@ -23,7 +23,7 @@ app.post('/' , function(req,res)
   let dataIn = req.body;
   let cityName = dataIn.city;
   
-  let theURL ="https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=f86327ec920bb02b42d79a2c2692e00f&units=metric#";
+  let theURL ="";
 
   // Sending GET request to OpenWeatherMap API
   htp.get(theURL,function(response){

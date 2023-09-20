@@ -11,8 +11,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 
-mongoose.connect(
-  `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.qpub9vx.mongodb.net/wikiDB`,
+mongoose.connect(``,
   { useNewUrlParser: true }
 );
 
