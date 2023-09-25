@@ -6,25 +6,36 @@ const Form = () => {
   const [error,setError] = useState(false);
   const [colorList,setColorList] = useState([]);
 
-  const handleChange = (e) => {
-      console.log(e.target.value);
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    try{
 
+      const colors = new Values(color).all(10);
+      console.log(colors);
+    }
+    catch(error){
+      setError(true);
+      console.log(error);
+    }
+      
   }
 
   return (
-    <div className="container">
+    <>
+    <section className="container">
       <h2>Color Generator</h2>
-
       <form className="color-form" onSubmit={handleSubmit}>
         <input type="color" name="color-input" id="color-input" />
-        <input type="text" onChange={handleChange} placeholder = "#f15025" value = {color} name="text-input" id="text-input" />
+        <input type="text" onChange={(e) => {setColor(e.target.value)}} placeholder = "#f15025" value = {color} name="text-input" id="text-input" />
+
         <button type="submit" className="btn">Submit</button>
       </form>
-    </div>
+    </section>
+
+    <section className="colors">
+
+    </section>
+    </>
   )
 }
 export default Form
