@@ -5,7 +5,7 @@ import Title from './Title';
 function About() {
   return (
     <section className="section" id="about">
-      <Title title='about' subTitle='us'/>
+      <Title title="about" subTitle="us" />
 
       <div className="section-center about-center">
         <div className="about-img">
@@ -15,16 +15,18 @@ function About() {
         <article className="about-info">
           <h3>explore the difference</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-            quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
-            unde dolor?
+            Welcome to our tour and travel company. We are dedicated to
+            providing you with the best travel experiences, tailored to your
+            preferences. Our team of experts works tirelessly to ensure that
+            your journey is smooth and memorable.
           </p>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-            quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
-            unde dolor?
+            With years of experience in the travel industry, we understand the
+            intricacies of planning the perfect trip. We take care of all the
+            details, so you can focus on enjoying your adventure. From exotic
+            destinations to local gems, we've got you covered.
           </p>
-          
+
           <a href="#about" className="btn">
             read more
           </a>
